@@ -106,11 +106,7 @@ with col_info:
     st.markdown("#### Detected gesture")
     label_placeholder = st.empty()
     tts_placeholder = st.empty()
-    st.caption(
-        "Supported: Open Palm, Fist, Thumbs Up/Down, Peace, Point, OK, "
-        "I Love You, Call Me 🤙🏻, Pinched Fingers 🤌🏻, 🖕, and the two-hand "
-        "gestures Heart Hands 🫶🏻 and Shy 👉🏻👈🏻."
-    )
+
 
 if webrtc_ctx.video_processor:
     webrtc_ctx.video_processor.mirror = mirror
