@@ -79,11 +79,11 @@ def classify_gesture(landmarks, handedness_label):
     # --- All four fingers curled -> thumb direction decides Up / Down / Fist
     if not index and not middle and not ring and not pinky:
         if thumb_tip_y < thumb_mcp_y - 0.06:
-            return "Thumbs Up 👍"
+            return "I Agree 👍"
         elif thumb_tip_y > thumb_mcp_y + 0.06:
-            return "Thumbs Down 👎"
+            return "Nope 👎"
         else:
-            return "Fist ✊"
+            return "Help ✊"
 
     # --- Call Me / Shaka: thumb + pinky extended, rest curled
     if thumb and pinky and not index and not middle and not ring:
@@ -107,7 +107,7 @@ def classify_gesture(landmarks, handedness_label):
 
     # --- Open palm
     if thumb and index and middle and ring and pinky:
-        return "Open Palm ✋"
+        return "Hello ✋"
 
     return "Unknown"
 
@@ -134,7 +134,7 @@ def classify_two_hand_gesture(hands_landmarks_list, handedness_list):
         and not f1["middle"] and not f1["ring"] and not f1["pinky"]
         and not f2["middle"] and not f2["ring"] and not f2["pinky"]
     ):
-        return "Heart Hands 🫶🏻"
+        return "Heart 🫶🏻"
 
     # --- Shy / pointing at each other: both hands doing "Point", index tips close
     def is_point(f):
